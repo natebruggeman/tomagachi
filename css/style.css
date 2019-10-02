@@ -1,3 +1,18 @@
 body{
-	background-color: lightcoral;
+	background: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b0e53331516629.565449774c2d4.png) no-repeat;
+}
+
+h1{
+	text-align: center;
+	padding: 6px;
+}
+#statusbar{
+	border: 6px double purple;
+	width: 125px;
+	padding: 6px;
+}
+button{
+	padding: 6px;
+	align-content: center;
+	border-radius: 11px; 
 }

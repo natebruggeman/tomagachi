@@ -1,4 +1,6 @@
 
+// alert("Welcome to Tomagatchi! The rules are simple, keep your buddy alive for aslong as you can. Your buddy will need food, sleep, and entertainment! If your buddy reaches 10 in any of these categories they'll die! Give your Tomagatchi a name and click Give birth to start! Good Luck!")
+
 
 $('#start').on('click', () =>{
 	console.log('start button works');
@@ -9,33 +11,16 @@ $('#start').on('click', () =>{
 	
 });
 
-$('#submit-btn').on('click', () => {
-    // console.log( $('#input-box').val() );
+$('#submit-btn').one('click', () => {
+
     const $getName =$('#input-box').val() 
     console.log($getName);
-    $('<h1> $getName </h1>')
-
+    const $h1 = $('<h1/>')
+    const $header = $('header')
+    $h1.append($getName)
+    $header.prepend($h1)
 });
 
-
-// class Tomagatchi{
-// 	constructor(hunger, sleepiness, boredom,){
-// 		this.hunger = hunger;
-// 		this.sleepiness = sleepiness;
-// 		this.boredom = boredom;
-
-// 		this.eat = function(){
-// 			game.hunger--
-// 		}
-// 		this.sleep = function(){
-// 			game.sleep--
-// 		}
-// 		this.entertain = function(){
-// 			game.boredom--
-// 		}
-
-// 	}
-// }
 
 const game = {
 	time: 0,
@@ -135,4 +120,43 @@ $('#entertain').on('click', (e) =>{
 	console.log('entertain button works');
 	game.boredom--
 });
+
+
+
+
+
+
+
+
+// class Tomagatchi{
+// 	constructor(hunger, sleepiness, boredom,){
+// 		this.hunger = hunger;
+// 		this.sleepiness = sleepiness;
+// 		this.boredom = boredom;
+
+// 		this.eat = function(){
+// 			game.hunger--
+// 		}
+// 		this.sleep = function(){
+// 			game.sleep--
+// 		}
+// 		this.entertain = function(){
+// 			game.boredom--
+// 		}
+
+// 	}
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
