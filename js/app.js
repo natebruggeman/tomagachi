@@ -1,14 +1,7 @@
 
-  $('#submit-btn').on('click', () => {
-    console.log( $('#input-box').val() );
-  });
-
-
-
 
 $('#start').on('click', () =>{
 	console.log('start button works');
-	// const setName = prompt("You're about to give birth to a Tomagatchi wether you like it or not what would you like to name it?")
 	game.setHunger();
 	game.setTimer();
 	game.setSleepiness();
@@ -16,30 +9,33 @@ $('#start').on('click', () =>{
 	
 });
 
-$('#feed').on('click', () =>{
-	console.log('feed button works');
+$('#submit-btn').on('click', () => {
+    // console.log( $('#input-box').val() );
+    const $getName =$('#input-box').val() 
+    console.log($getName);
+    $('<h1> $getName </h1>')
 
 });
 
 
+// class Tomagatchi{
+// 	constructor(hunger, sleepiness, boredom,){
+// 		this.hunger = hunger;
+// 		this.sleepiness = sleepiness;
+// 		this.boredom = boredom;
 
-// $('#sleep').on('click', () =>{
-// 	console.log('sleep button works');
-// });
-// $('#entertain').on('click', () =>{
-// 	console.log('entertain button works');
-// });
+// 		this.eat = function(){
+// 			game.hunger--
+// 		}
+// 		this.sleep = function(){
+// 			game.sleep--
+// 		}
+// 		this.entertain = function(){
+// 			game.boredom--
+// 		}
 
-class Tomagatchi{
-	constructor(hunger, sleepiness, boredom, age){
-	this.hunger = hunger;
-	this.sleepiness = sleepiness;
-	this.boredom = boredom;
-	this.age = age;
-	}
-}
-
-
+// 	}
+// }
 
 const game = {
 	time: 0,
@@ -123,7 +119,20 @@ const game = {
 }
 
 
+$('#feed').on('click', (e) =>{
+	console.log('feed button works');
+	game.hunger--
 
+});
 
+$('#sleep').on('click', (e) =>{
+	console.log('sleep button works');
+	game.sleepiness--
 
+});
+
+$('#entertain').on('click', (e) =>{
+	console.log('entertain button works');
+	game.boredom--
+});
 
