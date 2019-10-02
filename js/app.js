@@ -21,6 +21,9 @@ $('#submit-btn').one('click', () => {
     $header.prepend($h1)
 });
 
+const $img = $("#happy")
+console.log($img);
+
 
 const game = {
 	time: 0,
@@ -32,11 +35,14 @@ const game = {
 
 		const $timer = $('#timer');
 
+		const $status = $('#status')
+
 		const interval = setInterval(() => {
 
 			if(this.time === 100){
 				clearInterval(interval)
-				alert('Your Tomagatchi has passed away of old age, they lived a great life, refresh to start again')
+				// alert('Your Tomagatchi has passed away of old age, they lived a great life, refresh to start again')
+				$status.text(`Status: Passed away of old age`)
 				} else {
 				this.time++
 			}
@@ -54,7 +60,10 @@ const game = {
 
 			if(this.hunger === 10){
 				clearInterval(hungerInt)
-				alert('Your Tomagatchi has died of hunger, you monster!')
+				$('#status').text(`Status: Starved to death`)
+
+				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_OutOfIt.png");
+
 				} else {
 				this.hunger++
 			}
@@ -72,7 +81,10 @@ const game = {
 
 			if(this.sleepiness === 10){
 				clearInterval(sleepInt)
-				alert('Your Tomagatchi needs sleep, he stroked out and died!')
+				$('#status').text(`Status: Stroked out, died painfully`)
+				
+				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Sad.png");
+
 			} else {
 				this.sleepiness++
 			}
@@ -90,62 +102,50 @@ const game = {
 
 			if(this.boredom === 10){
 				clearInterval(boredomInt)
-				alert("Your Tomagatchi needs entertainment, he was so bored he killed himself")
+				$('#status').text(`Status: Dead AF, killed itself`)
+
+				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Angry.png");
+
 			} else {
 				this.boredom++
 			}
 			$boredom.text(`Boredom: ${this.boredom}`)
 		}, 4000)
 
-
 	},
+
+
+	
+
+
 
 
 }
 
+// const $img = $("#happy")
+// console.log($img);
 
 $('#feed').on('click', (e) =>{
 	console.log('feed button works');
 	game.hunger--
+	$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Eating.png");
+
 
 });
 
 $('#sleep').on('click', (e) =>{
 	console.log('sleep button works');
 	game.sleepiness--
+	$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Sleepy.png");
+
 
 });
 
 $('#entertain').on('click', (e) =>{
 	console.log('entertain button works');
 	game.boredom--
+	$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Loving.png");
 });
-
-
-
-
-
-
-
-
-// class Tomagatchi{
-// 	constructor(hunger, sleepiness, boredom,){
-// 		this.hunger = hunger;
-// 		this.sleepiness = sleepiness;
-// 		this.boredom = boredom;
-
-// 		this.eat = function(){
-// 			game.hunger--
-// 		}
-// 		this.sleep = function(){
-// 			game.sleep--
-// 		}
-// 		this.entertain = function(){
-// 			game.boredom--
-// 		}
-
-// 	}
-// }
 
 
 
