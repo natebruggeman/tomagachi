@@ -8,6 +8,7 @@ $('#start').on('click', () =>{
 	game.setTimer();
 	game.setSleepiness();
 	game.setBoredom();
+	game.setSafety();
 	
 });
 
@@ -41,7 +42,7 @@ const game = {
 
 			if(this.time === 100){
 				clearInterval(interval)
-				// alert('Your Tomagatchi has passed away of old age, they lived a great life, refresh to start again')
+				
 				$status.text(`Status: Passed away of old age`)
 				} else {
 				this.time++
@@ -60,7 +61,7 @@ const game = {
 
 			if(this.hunger === 10){
 				clearInterval(hungerInt)
-				$('#status').text(`Status: Starved to death`)
+				$('#status').text(`Status: Starved to death, you monster`)
 
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_OutOfIt.png");
 
@@ -81,7 +82,7 @@ const game = {
 
 			if(this.sleepiness === 10){
 				clearInterval(sleepInt)
-				$('#status').text(`Status: Stroked out, died painfully`)
+				$('#status').text(`Status: Died of a temper tantrum`)
 				
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Sad.png");
 
@@ -102,7 +103,7 @@ const game = {
 
 			if(this.boredom === 10){
 				clearInterval(boredomInt)
-				$('#status').text(`Status: Dead AF, killed itself`)
+				$('#status').text(`Status: Died of a broken heart`)
 
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Angry.png");
 
@@ -113,17 +114,22 @@ const game = {
 		}, 4000)
 
 	},
+	setSafety(){
+		if(this.boredom === 10 || this.hunger === 10 || this.sleepiness === 10){
+			clearInterval(interval);
+			clearInterval(hungerInt);
+			clearInterval(sleepInt);
+			clearInterval(boredomInt);
+		}
 
 
-	
 
 
-
+	}
+ 
 
 }
 
-// const $img = $("#happy")
-// console.log($img);
 
 $('#feed').on('click', (e) =>{
 	console.log('feed button works');
