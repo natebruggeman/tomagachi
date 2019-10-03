@@ -2,7 +2,11 @@ body{
 	background: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b0e53331516629.565449774c2d4.png);
 	background-repeat: no-repeat;
   	background-size: 100%;
+  	margin-top: 20%;
+  	margin-bottom: auto;
+  	margin-left: 7%;
   	display: flex;
+  	align-items: flex-end;
 }
 
 header{
@@ -22,7 +26,7 @@ h1{
 	padding: 6px;
 	background-color: rgba(28,110,164,0.35);
 	font-family: Optima, sans-serif
-	
+
 }
 button{
 	padding: 16px;
