@@ -2,22 +2,26 @@ body{
 	background: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b0e53331516629.565449774c2d4.png);
 	background-repeat: no-repeat;
   	background-size: 100%;
-  	margin-top: 20%;
-  	margin-bottom: auto;
-  	margin-left: 7%;
-  	display: flex;
-  	align-items: flex-end;
 }
-
-header{
-	display: flex
-	justify-content: bottom;
+header {
+	display: flex;
+	align-items: center
+}
+header h1 {
+	margin: 0;
+	flex-grow: 1;
 }
 
 h1{
+	display: inline;
 	text-align: center;
-	padding: 6px;
-	font-family: Optima, sans-serif, 
+	/*justify-content: center;*/
+	font-family: Optima, sans-serif
+}
+
+
+a{
+	margin: 10%;
 }
 
 #statusbar{
@@ -30,18 +34,106 @@ h1{
 }
 button{
 	padding: 16px;
-	align-content: center;
+	/*align-content: center;*/
 	border-radius: 11px; 
-	vertical-align: bottom;
+	/*vertical-align: bottom;*/
 	font-family: Optima, sans-serif 
 
 }
 input{
 	padding: 16px;
-	align-content: center;
+	/*align-content: center;*/
 	border-radius: 11px;
 	font-family: Optima, sans-serif 
 }
 
 
 
+
+/*p {
+	display: flex;
+	align-items: flex-end;
+	align-content: flex-end;
+	flex-direction: row;
+	
+}*/
+
+/*
+p {
+	display: flex;
+	align-content: flex-end;
+	flex-direction: row;
+	align-items: flex-end;
+}
+a{
+	display: flex;
+	flex-direction: row-reverse;
+	margin-right: 15%;
+	margin-bottom: auto;
+
+}
+
+
+header{
+	display: flex;
+	justify-content: top;
+	align-content: flex-end;
+	align-items: center;
+	margin-left: 20px;
+}
+
+/*h1{
+	text-align: center;
+	padding: 6px;
+	font-family: Optima, sans-serif, 
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	/*display: flex;*/
+  	/*align-items: flex-end;
+  	align-content: flex-end;*/
+ /* 	margin-top: 20%;
+  	margin-bottom: auto;
+  	margin-left: 7%;
+  	display: flex;
+  	align-items: flex-end;
+  	align-content: flex-end;
+}*/}
+
+
+
+
+/*p{
+
+
+
+
+
+ 	margin-top: 20%;
+  	margin-bottom: auto;
+  	margin-left: 7%;
+  	display: flex;
+  	align-items: flex-end;
+  	align-content: flex-end;
+}
+*/
+
+/*h1 {
+	display: flex;
+	align-items: center;
+	align-content: flex-start;
+	/*margin-bottom: 400px;*/

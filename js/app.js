@@ -1,14 +1,13 @@
 
-// alert("Welcome to Tomagatchi! The rules are simple, keep your buddy alive for aslong as you can. Your buddy will need food, sleep, and entertainment! If your buddy reaches 10 in any of these categories they'll die! Give your Tomagatchi a name and click Give birth to start! Good Luck!")
-
-
-$('#start').on('click', () =>{
+$('#start').one('click', () =>{
 	console.log('start button works');
 	game.setHunger();
 	game.setTimer();
 	game.setSleepiness();
 	game.setBoredom();
 	game.setSafety();
+	$('#status').text(`Status: Still Kickin'`)
+	$("#happy").attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Congrats.png");
 	
 });
 
@@ -19,7 +18,7 @@ $('#submit-btn').one('click', () => {
     const $h1 = $('<h1/>')
     const $header = $('header')
     $h1.append($getName)
-    $header.prepend($h1)
+    $header.append($h1)
 });
 
 const $img = $("#happy")
@@ -45,7 +44,7 @@ const game = {
 
 			if(this.time === 100){
 				clearInterval(interval)
-				
+				$("#happy").attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Waving.png");
 				$status.text(`Status: Passed away of old age`)
 				} else {
 				this.time++
@@ -65,7 +64,7 @@ const game = {
 			if(this.hunger === 10){
 				clearInterval(hungerInt)
 
-				$('#status').text(`Status: Starved to death, you monster`)
+				$('#status').text(`Status: Dead`)
 
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_OutOfIt.png");
 
@@ -87,9 +86,10 @@ const game = {
 			if(this.sleepiness === 10){
 				clearInterval(sleepInt)
 
-				$('#status').text(`Status: Died of a temper tantrum`)
+				$('#status').text(`Status: Dead`)
 				
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Sad.png");
+
 
 			} else {
 				this.sleepiness++
@@ -109,7 +109,7 @@ const game = {
 			if(this.boredom === 10){
 				clearInterval(boredomInt)
 
-				$('#status').text(`Status: Died of a broken heart`)
+				$('#status').text(`Status: Dead`)
 
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Angry.png");
 
