@@ -1,11 +1,7 @@
 
 $('#start').one('click', () =>{
 	console.log('start button works');
-	game.setHunger();
 	game.setTimer();
-	game.setSleepiness();
-	game.setBoredom();
-	game.setSafety();
 	$('#status').text(`Status: Still Kickin'`)
 	$("#happy").attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Congrats.png");
 	
@@ -44,18 +40,17 @@ const game = {
 
 			if(this.time === 100){
 				clearInterval(interval)
+				clearInterval(hungerInt)
+				clearInterval(sleepInt)
+				clearInterval(boredomInt)
 				$("#happy").attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Waving.png");
-				$status.text(`Status: Passed away of old age`)
+				$status.text(`Status: Passed away of old age, bye buddy!`)
 				} else {
 				this.time++
 			}
 			$timer.text(`Days old: ${this.time}`)
 
-
 		}, 1000)
-	},
-
-	setHunger(){
 
 		const $hunger = $('#hunger');
 
@@ -63,8 +58,10 @@ const game = {
 
 			if(this.hunger === 10){
 				clearInterval(hungerInt)
-
-				$('#status').text(`Status: Dead`)
+				clearInterval(sleepInt)
+				clearInterval(boredomInt)
+				clearInterval(interval)
+				$('#status').text(`Status: Starved to death!`)
 
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_OutOfIt.png");
 
@@ -73,11 +70,7 @@ const game = {
 			}
 			$hunger.text(`Hunger: ${this.hunger}`)
 
-
 		}, 3000)
-	},
-
-	setSleepiness(){
 
 		const $sleepiness = $('#sleepiness');
 
@@ -85,8 +78,10 @@ const game = {
 
 			if(this.sleepiness === 10){
 				clearInterval(sleepInt)
-
-				$('#status').text(`Status: Dead`)
+				clearInterval(boredomInt)
+				clearInterval(hungerInt)
+				clearInterval(interval)
+				$('#status').text(`Status: Stroked out, RIP!`)
 				
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Sad.png");
 
@@ -98,18 +93,16 @@ const game = {
 
 		}, 7000)
 
-	},
-
-	setBoredom(){
-
 		const $boredom = $('#boredom');
 
 		const boredomInt = setInterval(() => {
 
 			if(this.boredom === 10){
 				clearInterval(boredomInt)
-
-				$('#status').text(`Status: Dead`)
+				clearInterval(sleepInt)
+				clearInterval(hungerInt)
+				clearInterval(interval)
+				$('#status').text(`Status: Died of a broken heart!`)
 
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Angry.png");
 
@@ -119,14 +112,11 @@ const game = {
 			}
 			$boredom.text(`Boredom: ${this.boredom}`)
 		}, 4000)
-
 	},
 	
-	setSafety(){
-		console.log('sooo');
-
-	}
 }
+
+
 
 
 
