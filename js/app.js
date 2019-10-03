@@ -26,6 +26,9 @@ const $img = $("#happy")
 console.log($img);
 
 
+
+
+
 const game = {
 	time: 0,
 	hunger: 0,
@@ -61,6 +64,7 @@ const game = {
 
 			if(this.hunger === 10){
 				clearInterval(hungerInt)
+
 				$('#status').text(`Status: Starved to death, you monster`)
 
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_OutOfIt.png");
@@ -82,6 +86,7 @@ const game = {
 
 			if(this.sleepiness === 10){
 				clearInterval(sleepInt)
+
 				$('#status').text(`Status: Died of a temper tantrum`)
 				
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Sad.png");
@@ -103,9 +108,11 @@ const game = {
 
 			if(this.boredom === 10){
 				clearInterval(boredomInt)
+
 				$('#status').text(`Status: Died of a broken heart`)
 
 				$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Angry.png");
+
 
 			} else {
 				this.boredom++
@@ -114,21 +121,15 @@ const game = {
 		}, 4000)
 
 	},
+	
 	setSafety(){
-		if(this.boredom === 10 || this.hunger === 10 || this.sleepiness === 10){
-			clearInterval(interval);
-			clearInterval(hungerInt);
-			clearInterval(sleepInt);
-			clearInterval(boredomInt);
-		}
-
-
-
+		console.log('sooo');
 
 	}
- 
-
 }
+
+
+
 
 
 $('#feed').on('click', (e) =>{
@@ -154,8 +155,15 @@ $('#entertain').on('click', (e) =>{
 });
 
 
+// const setSafety = (safety) => {
+// 		if(this.boredom === 10 || this.hunger === 10 || this.sleepiness === 10){
+// 		game.clearInterval(interval)
+// 		game.clearInterval(hungerInt)
+// 		game.clearInterval(sleepInt)
+// 		game.clearInterval(boredomInt)
+// 		}
 
-
+// }
 
 
 
