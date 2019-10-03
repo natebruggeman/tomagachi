@@ -2,7 +2,7 @@
 $('#start').one('click', () =>{
 	console.log('start button works');
 	game.setTimer();
-	$('#status').text(`Status: Still Kickin'`)
+	$('#status').text(`Status: Still Kickin'!`)
 	$("#happy").attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Congrats.png");
 	
 });
@@ -19,9 +19,6 @@ $('#submit-btn').one('click', () => {
 
 const $img = $("#happy")
 console.log($img);
-
-
-
 
 
 const game = {
@@ -119,9 +116,6 @@ const game = {
 
 
 
-
-
-
 $('#feed').on('click', (e) =>{
 	console.log('feed button works');
 	game.hunger--
@@ -143,23 +137,6 @@ $('#entertain').on('click', (e) =>{
 	game.boredom--
 	$img.attr("src","https://www.gstatic.com/chat/stickers/pack14/TinyAstronaut_Loving.png");
 });
-
-
-// const setSafety = (safety) => {
-// 		if(this.boredom === 10 || this.hunger === 10 || this.sleepiness === 10){
-// 		game.clearInterval(interval)
-// 		game.clearInterval(hungerInt)
-// 		game.clearInterval(sleepInt)
-// 		game.clearInterval(boredomInt)
-// 		}
-
-// }
-
-
-
-
-
-
 
 
 
